@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <title>FileHelper</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        color: #333;
+        background-color: #f5f5f5;
+    }
+
+    h2 {
+        color: #555;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    li {
+        padding: 10px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    li span {
+        float: right;
+        color: #777;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    input[type="text"] {
+        text-align: left;
+        width: 100%; /* 这里修改了宽度为100%，使得输入框在移动设备上全屏显示 */
+        padding: 10px; /* 修改了padding的值，使得输入框更适合在小屏幕上操作 */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        resize: none; /* 去掉了文本域的resize属性，避免用户在移动设备上无法正确调整文本域大小 */
+        overflow: auto;
+    }
+
+    textarea {
+        text-align: left;
+        width: 90%; /* 这里修改了宽度为100%，使得文本域在移动设备上全屏显示 */
+        padding: 10px; /* 修改了padding的值，使得文本域更适合在小屏幕上操作 */
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        resize: none; /* 去掉了文本域的resize属性，避免用户在移动设备上无法正确调整文本域大小 */
+        overflow: auto;
+    }
+
+    input[type="submit"] {
+        float: right;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    a strong {
+        float: right;
+    }
+
+    /* 媒体查询，针对移动设备的特性调整样式 */
+    @media screen and (max-width: 600px) {
+        input[type="text"], textarea {
+            width: 100%; /* 在屏幕宽度小于600px时，将输入框和文本域的宽度设置为100% */
+        }
+    }
+    </style>
+</head>
+<body>
+    <h2>Chat record</h2>
+    <ul>
+        {% for message in all_chat %}
+        <li>
+            {{ message.texts|linebreaksbr}}
+            <span>--{{ message.post_date }}</span>
+            {% if message.filename and message.upload %}
+            <a href="{% url "FileHelper:download" message.filename %}">
+                <strong>File:&nbsp{{ message.filename }}&nbsp&nbsp&nbsp;</strong>
+            </a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <form action="{% url 'FileHelper:index' %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset id="input">
+            <div>
+                <textarea name="text" placeholder="write something here..."
+                    onkeydown="if (event.ctrlKey && event.key === 'Enter') { this.form.submit(); }"></textarea>
+            </div>
+            <div>
+                <input type="file" name="file" value="file">
+            </div>
+        </fieldset>
+        <input type="submit" value="Send">
+    </form>
+</body>
+</html>

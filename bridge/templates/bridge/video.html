@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="zh-CN">
+	{% load static %}
+	<head>
+		<meta charset="utf-8">
+		<title>{{ home_title }}</title>
+		<link rel="shortcut icon" href="{% static 'img/iconss(95).png' %}">
+		<style>
+			@font-face {
+				font-family: Unicons;
+				src: url({% static 'fonts/Unicons.woff2' %}) format("woff2"),
+				url({% static 'fonts/Unicons.woff' %}) format("woff");
+				font-weight: 400;
+				font-style: normal;
+				font-display: block
+			}
+
+			@font-face {
+				font-family: Custom;
+				src: url({% static 'fonts/Custom.woff2' %}) format("woff2"),
+				url({% static 'fonts/Custom.woff' %}) format("woff");
+			}
+
+			.img-mask.mask-1 img {
+				-webkit-mask-image: url({% static 'img/blob.svg' %}) !important;
+				mask-image: url({% static 'img/blob.svg' %}) !important;
+			}
+
+			.img-mask.mask-2 img {
+				-webkit-mask-image: url({% static 'img/hex.svg' %}) !important;
+				mask-image: url({% static 'img/hex.svg' %}) !important;
+			}
+
+			.img-mask.mask-3 img {
+				-webkit-mask-image: url({% static 'img/blob2.svg' %}) !important;
+				mask-image: url({% static 'img/blob2.svg' %}) !important;
+			}
+
+			.c12682 {
+				width: 110%;
+				/* 使得元素的宽度为屏幕宽度的100% */
+				height: auto;
+				/* 使得元素的高度自动调整，以保持宽高比 */
+			}
+		</style>
+		<link rel="stylesheet" href="{% static 'css/user-style.css' %}">
+	</head>
+
+	<body>
+
+		<div>
+			<nav id="sticky-navbar" class="navbar navbar-expand-lg center-nav transparent navbar-light navbar-clone fixed">
+				<div class="container flex-lg-row flex-nowrap align-items-center">
+					<div class="navbar-brand w-100"><img src="{% static 'img/titleIcon.png' %}" alt="桥项目" /></div>
+					<div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+						<div class="offcanvas-header d-lg-none">
+							<h3 class="text-white fs-30 mb-0">{{ ui_sidebar_title }}</h3><button type="button"
+								data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+						</div>
+						<div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+							<ul class="navbar-nav">
+								<li class="nav-item"><a href="{% url 'index' lan %}" class="nav-link">{{ ui_butt_home }}</a>
+								</li>
+								<li class="nav-item"><a href="{% url 'index' lan %}#about"
+										class="nav-link">{{ ui_butt_about }}</a></li>
+								<li class="nav-item"><a href="{% url 'index' lan %}#class"
+										class="nav-link">{{ ui_butt_acti }}</a></li>
+								<li class="nav-item"><a href="{% url 'index' lan %}#shop"
+										class="nav-link">{{ ui_butt_shop }}</a></li>
+								<li class="nav-item"><a href="{% url 'index' lan %}#commu"
+										class="nav-link">{{ ui_butt_commu }}</a></li>
+							</ul><!-- /.navbar-nav -->
+							<div class="offcanvas-footer d-lg-none">
+								<div><a href="mzzj139@gmail.com" class="link-inverse">mzzj139@gamil.com</a><br /> (+86)
+									13810838584 <br />
+									<nav class="nav social social-white mt-4"><a href="#"><i class="uil uil-twitter"></i></a><a
+											href="#"><i class="uil uil-facebook-f"></i></a><a href="#"><i
+												class="uil uil-dribbble"></i></a><a href="#"><i class="uil uil-instagram"></i></a><a
+											href="#"><i class="uil uil-youtube"></i></a>
+									</nav><!-- /.social -->
+								</div>
+							</div><!-- /.offcanvas-footer -->
+						</div><!-- /.offcanvas-body -->
+					</div><!-- /.navbar-collapse -->
+					<div class="navbar-other w-100 d-flex ms-auto">
+						<ul class="navbar-nav flex-row align-items-center ms-auto">
+							<li class="nav-item dropdown language-select text-uppercase"><a href="#" role="button"
+									data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+									class="nav-link dropdown-item dropdown-toggle">语言</a>
+								<ul class="dropdown-menu">
+									<li class="nav-item"><a href="{% url 'index' "en" %}" class="dropdown-item">English</a>
+									</li>
+									<li class="nav-item"><a href="{% url 'index' "zh" %}" class="dropdown-item">中文</a></li>
+								</ul>
+							</li>
+							<li class="nav-item d-lg-none"><button class="hamburger offcanvas-nav-btn"><span></span></button>
+							</li>
+							<li class="nav-item d-none d-md-block"><a href="mzzj139@gmail.com"
+									class="btn btn-sm btn-primary rounded-pill">联系我们</a></li>
+						</ul><!-- /.navbar-nav -->
+					</div><!-- /.navbar-other -->
+				</div><!-- /.container -->
+			</nav>
+			<link rel="shortcut icon" href="{% static 'img/iconss(95).png' %}" />
+			<link rel="stylesheet" href="{% static 'css/plugins.css' %}" />
+			<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+			<div class="content-wrapper">
+				<header class="wrapper bg-light">
+					<nav class="navbar navbar-expand-lg center-nav transparent navbar-light">
+						<div class="container flex-lg-row flex-nowrap align-items-center"><img
+								src="{% static 'img/titleIcon.png' %}" class="c12617" />
+							<div class="navbar-brand w-100"><a href="#"></a></div>
+							<div class="navbar-collapse offcanvas offcanvas-nav offcanvas-start">
+								<div class="offcanvas-header d-lg-none">
+									<h3 class="text-white fs-30 mb-0">{{ ui_navbar_title }}</h3><button type="button"
+										data-bs-dismiss="offcanvas" aria-label="Close" class="btn-close btn-close-white"></button>
+								</div>
+								<div class="offcanvas-body ms-lg-auto d-flex flex-column h-100">
+									<ul class="navbar-nav">
+										<li class="nav-item"><a href="{% url 'index' lan %}"
+												class="nav-link">{{ ui_butt_home }}</a></li>
+										<li class="nav-item"><a href="{% url 'index' lan %}#about"
+												class="nav-link">{{ ui_butt_about }}</a></li>
+										<li class="nav-item"><a href="{% url 'index' lan %}#class"
+												class="nav-link">{{ ui_butt_acti }}</a></li>
+										<li class="nav-item"><a href="{% url 'index' lan %}#shop"
+												class="nav-link">{{ ui_butt_shop }}</a></li>
+										<li class="nav-item"><a href="{% url 'index' lan %}#commu"
+												class="nav-link">{{ ui_butt_commu }}</a></li>
+									</ul><!-- /.navbar-nav -->
+									<div class="offcanvas-footer d-lg-none">
+										<div><a href="mzzj139@gmail.com" class="link-inverse">mzzj139@gamil.com</a><br /> (+86)
+											13810838584 <br />
+											<nav class="nav social social-white mt-4"><a href="#"><i
+														class="uil uil-twitter"></i></a><a href="#"><i
+														class="uil uil-facebook-f"></i></a><a href="#"><i
+														class="uil uil-dribbble"></i></a><a href="#"><i
+														class="uil uil-instagram"></i></a><a href="#"><i
+														class="uil uil-youtube"></i></a></nav><!-- /.social -->
+										</div>
+									</div><!-- /.offcanvas-footer -->
+								</div><!-- /.offcanvas-body -->
+							</div><!-- /.navbar-collapse -->
+							<div class="htmlpage-row">
+								<div class="htmlpage-cell"></div>
+							</div>
+							<div class="navbar-other w-100 d-flex ms-auto">
+								<ul class="navbar-nav flex-row align-items-center ms-auto">
+									<li class="nav-item dropdown language-select text-uppercase"><a href="#" role="button"
+											data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+											class="nav-link dropdown-item dropdown-toggle">语言</a>
+										<ul class="dropdown-menu">
+											<li class="nav-item"><a href="{% url 'index' "en" %}" class="dropdown-item">English</a>
+											</li>
+											<li class="nav-item"><a href="{% url 'index' "zh" %}" class="dropdown-item">中文</a>
+											</li>
+										</ul>
+									</li>
+									<li class="nav-item d-lg-none"><button
+											class="hamburger offcanvas-nav-btn"><span></span></button></li>
+									<li class="nav-item d-none d-md-block"></li>
+								</ul><!-- /.navbar-nav -->
+							</div><!-- /.navbar-other -->
+						</div><!-- /.container -->
+					</nav><!-- /.navbar -->
+				</header><!-- /header -->
+
+
+
+
+
+
+
+
+
+
+
+				<section class="wrapper bg-light">
+					<div class="container pt-10 pt-md-14 text-center">
+						<div class="row">
+							<div class="col-md-8 col-lg-7 col-xl-6 col-xxl-5 mx-auto">
+								<h1 title="projectFullName" class="display-1 mb-3">{{ home_title }}</h1>
+								<p title="project short describe" class="lead fs-lg px-lg-10 px-xxl-8">{{ home_subtitle }}
+								</p>
+							</div><!-- /column -->
+						</div><!-- /.row -->
+					</div><!-- /.container -->
+				</section><!-- /section -->
+
+				<section class="wrapper bg-light">
+					<div class="container pt-9 pt-md-11 pb-14 pb-md-16">
+						<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+							<div class="col-lg-6 position-relative order-lg-2">
+								<div class="overlap-grid overlap-grid-2">
+									<div class="item">
+										<video allowfullscreen="allowfullscreen" class="c12682" src="{% static 'img/video.mkv' %}"
+											controls="controls">
+										</video>
+									</div>
+								</div>
+								<div data-rellax-speed="1" id="i61usk" class="shape bg-dot primary rellax w-16 h-20 c14046">
+								</div>
+							</div>
+							<!--/column -->
+
+							<div class="col-lg-6"><img src="{% static 'img/megaphone.svg' %}" alt=""
+									class="svg-inject icon-svg icon-svg-md mb-4" />
+								<h2 class="mb-3">项目介绍</h2>
+								<p title="subProjectTitle" class="lead fs-lg">一个什么什么的项目</p>
+								<p title="detail describe" class="mb-6">{{ pptIntro }}</p>
+								<!--/.row -->
+							</div>
+							<!--/column -->
+						</div>
+					</div>
+				</section><!-- /section -->
+
+
+				<section class="wrapper bg-light">
+					<div class="container pt-9 pt-md-11 pb-14 pb-md-16">
+						<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+							<div class="col-lg-6 position-relative order-lg-2">
+								<div class="overlap-grid overlap-grid-2">
+									<div class="item">
+										<img src="{% static 'img/biliShortCut.png' %}"
+											href="https://account.bilibili.com/account/home?spm_id_from=333.999.0.0" alt=""
+											id="i6cy4l" />
+									</div>
+								</div>
+								<div data-rellax-speed="1" id="i61usk" class="shape bg-dot primary rellax w-16 h-20 c14046">
+								</div>
+							</div>
+							<!--/column -->
+
+							<div class="col-lg-6"><img src="{% static 'img/megaphone.svg' %}" alt=""
+									class="svg-inject icon-svg icon-svg-md mb-4" />
+								<h2 class="mb-3">项目介绍</h2>
+								<p title="subProjectTitle" class="lead fs-lg"><a href="https://space.bilibili.com/2132218713"
+										class="c11978">My bilibili account</a></p>
+								<p title="detail describe" class="mb-6">{{ biliIntro }}</p>
+								<!--/.row -->
+							</div>
+							<!--/column -->
+						</div>
+					</div>
+				</section><!-- /section -->
+
+				<section class="wrapper bg-light">
+					<div class="container pt-9 pt-md-11 pb-14 pb-md-16">
+						<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+							<div class="col-lg-6 position-relative order-lg-2">
+								<div class="overlap-grid overlap-grid-2">
+									<div class="item">
+										<img src="{% static 'img/githubShortCut.png' %}"
+											href="https://github.com/Mzzj114/Mzzj-s-Repository" alt="" id="i6cy4l" />
+									</div>
+								</div>
+								<div data-rellax-speed="1" id="i61usk" class="shape bg-dot primary rellax w-16 h-20 c14046">
+								</div>
+							</div>
+							<!--/column -->
+
+							<div class="col-lg-6"><img src="{% static 'img/megaphone.svg' %}" alt=""
+									class="svg-inject icon-svg icon-svg-md mb-4" />
+								<h2 class="mb-3">项目介绍</h2>
+								<p title="subProjectTitle" class="lead fs-lg"><a
+										href="https://github.com/Mzzj114/Mzzj-s-Repository" class="c11978">My Github
+										repository</a></p>
+								<p title="detail describe" class="mb-6">{{ githubIntro }}</p>
+								<!--/.row -->
+							</div>
+							<!--/column -->
+						</div>
+					</div>
+				</section><!-- /section -->
+
+				<section class="wrapper bg-light">
+					<div class="container pt-9 pt-md-11 pb-14 pb-md-16">
+						<div class="row gx-lg-8 gx-xl-12 gy-10 align-items-center">
+							<div class="col-lg-6 position-relative order-lg-2">
+								<div class="overlap-grid overlap-grid-2">
+									<div class="item">
+										<img src="{% static 'img/csdnShortCut.png' %}" href="https://blog.csdn.net/m0_66509806"
+											alt="" id="i6cy4l" />
+									</div>
+								</div>
+								<div data-rellax-speed="1" id="i61usk" class="shape bg-dot primary rellax w-16 h-20 c14046">
+								</div>
+							</div>
+							<!--/column -->
+
+							<div class="col-lg-6"><img src="{% static 'img/megaphone.svg' %}" alt=""
+									class="svg-inject icon-svg icon-svg-md mb-4" />
+								<h2 class="mb-3">项目介绍</h2>
+								<p title="subProjectTitle" class="lead fs-lg"><a href="https://blog.csdn.net/m0_66509806"
+										class="c11978">My csdn blog</a></p>
+								<p title="detail describe" class="mb-6">{{ csdnIntro }}</p>
+								<!--/.row -->
+							</div>
+							<!--/column -->
+						</div>
+					</div>
+				</section><!-- /section -->
+
+
+			</div><!-- /.content-wrapper -->
+
+
+
+
+
+
+
+
+
+
+
+
+			<footer class="bg-navy text-inverse">
+				<div class="container pt-15 pt-md-17 pb-13 pb-md-15">
+					<div class="d-lg-flex flex-row align-items-lg-center"></div>
+					{% if lan == 'zh' %}
+					<h3 class="display-4 mb-6 mb-lg-0 pe-lg-20 pe-xl-22 pe-xxl-25 text-white">如遇到问题请与我们联系，感谢支持！</h3>
+					{% else %}
+					<h3 class="display-4 mb-6 mb-lg-0 pe-lg-20 pe-xl-22 pe-xxl-25 text-white">Contact us if you have any
+						question</h3>
+					{% endif %}
+				</div>
+				<!--/div -->
+				<hr class="mt-11 mb-12" />
+				<div class="row gy-6 gy-lg-0">
+					<div class="col-md-4 col-lg-3">
+						<div class="widget">
+							<nav class="nav social social-white"><a href="#"></a><a href="#"></a><a href="#"></a><a
+									href="#"></a><a href="#"></a></nav><!-- /.social -->
+						</div>
+						<!-- <a href="https://space.bilibili.com/2132218713" class="c11978">My bilibili account</a><a class="c7361"><br />My github repository<br /></a> -->
+					</div><!-- /column -->
+					<div class="col-md-4 col-lg-3">
+						<div class="widget">
+							<h4 class="widget-title text-white mb-3">Contact us</h4>
+							<address class="pe-xl-15 pe-xxl-17">Beijing China</address>mzzj139@gmail.com<br />(+86)
+							13810838584
+						</div><!-- /.widget -->
+					</div><!-- /column -->
+					<!-- /column -->
+					<div class="col-md-12 col-lg-3">
+						<div class="widget">
+							<h4 class="widget-title text-white mb-3">E-mail</h4>
+							<p class="mb-5">mzzj139@gmail.com<br /></p><!-- /.newsletter-wrapper -->
+						</div><!-- /.widget -->
+					</div><!-- /column -->
+				</div>
+				<!--/.row -->
+		</div><!-- /.container -->
+		</footer>
+		<script src="{% static 'js/plugins.js' %}"></script>
+		<script src="{% static 'js/theme.js' %}"></script>
+		</div>
+	</body>
+	<html>
