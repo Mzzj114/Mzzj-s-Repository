@@ -19,6 +19,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('blog/', include("blog.urls")),
     path('filehelper/', include("FileHelper.urls")),
     path('t-rex-runner', include("TRexRunner.urls")),
     path('bridge/', include("bridge.urls")),

@@ -10,3 +10,4 @@ class textPart(models.Model):
 
     def __str__(self):
         return self.text_name
+

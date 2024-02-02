@@ -15,6 +15,7 @@ def index(request):
             # print("creating new message: ",message)
             newc = chatRecord(texts=message, post_date=datetime.now(), filename=file.name, upload=file)
             newc.save()
+
             # return
         elif message:
             # print("creating new message: ",message)

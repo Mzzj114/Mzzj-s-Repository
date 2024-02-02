@@ -32,6 +32,9 @@
 
     form {
         margin-top: 20px;
+        position: fixed;
+        bottom: 0;
+        width: 97%;
     }
 
     input[type="text"] {
@@ -90,7 +93,9 @@
         </li>
         {% endfor %}
     </ul>
+
     <hr>
+
     <form action="{% url 'FileHelper:index' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset id="input">

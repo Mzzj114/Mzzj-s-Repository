@@ -30,7 +30,7 @@ def fui_context(language):
     return ui_context
 
 
-def index(request, language="zh"):
+def index(request, language="en"):
     context = {
         "intro": getText("home Project Introduction", language),
         "organizer_intro": getText("home Organizer intro", language),
@@ -44,7 +44,7 @@ def index(request, language="zh"):
                   dict(context, **fui_context(language)))
 
 
-def videoPage(request, language):
+def thingsPage(request, language):
     context = {
         "intro": getText("home Project Introduction", language),
         "pptIntro": getText("class ppt Intro", language),
