@@ -4,68 +4,17 @@
     {% load static %}
     <meta charset="UTF-8">
     <title>{{ title }}</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #282c34;
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/posts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/markdown.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/clearness-dark.css' %}">
 
-        }
-
-        .backbtn {
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-
-            font-size: 16px;
-            color: #d8d8d8;
-            text-decoration: none;
-
-            border-radius: 10px;
-
-            transition: transform 0.5s ease-out;
-        }
-
-        .backbtn:hover {
-            font-size: 16px; /* 放大字体 */
-            transform: scale(1.1); /* 放大1.2倍 */
-            transition: font-size 0.3s, transform 0.2s; /* 过渡效果持续0.3秒 */
-        }
-
-        .container {
-            max-width: 63%;
-            min-height: 900px;
-            margin: 5% auto;
-            padding: 20px;
-            background-color: #293c51;
-            border-radius: 3px;
-            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/
-        }
-
-        .blogs {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        .blogs h1 {
-            font-size: 18px;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .blogs p {
-            color: #bababa;
-            text-decoration: none;
-        }
-    </style>
 </head>
 <body>
 <a class="backbtn" href="{% url 'blog:index' %}">&nbsp;&nbsp;< back</a>
-<div class="container">
-    <div class="blogs">
-        <h1>{{ title }}</h1>
+
+<div class="container markdown clearness-dark">
+    <h1>{{ title }}</h1>
+    <div>
         {{ text }}
     </div>
 </div>

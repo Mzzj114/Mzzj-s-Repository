@@ -3,118 +3,8 @@
 {% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>个人博客</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #282c34;
-        }
-
-        .container {
-            max-width: 63%;
-            margin: 5% auto;
-            padding: 20px;
-            background-color: #293c51;
-            border-radius: 3px;
-            /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/
-
-        }
-
-        .profile {
-            max-width: 69%;
-            margin: 5% auto;
-            padding: 30px;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 20px;
-
-
-            /*border: 1px solid #444850;*/
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-
-            background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
-            transition: transform 0.5s ease-out;
-        }
-
-        .profile img {
-            border-radius: 50%;
-            width: 150px;
-            height: 150px;
-            object-fit: cover;
-            animation: spin 1s linear;
-        }
-
-        .profile:hover {
-            font-size: 26px; /* 放大字体 */
-            transform: scale(1.05); /* 放大1.2倍 */
-            transition: font-size 0.3s, transform 0.3s; /* 过渡效果持续0.3秒 */
-        }
-
-        .profile h2 {
-            margin-top: 0;
-            font-size: 24px;
-            color: #fff;
-
-        }
-
-        .profile p {
-            font-size: 16px;
-            color: #ccc;
-
-        }
-
-        .blogs {
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        .blogs ul {
-            display: flex;
-            flex-wrap: wrap;
-            list-style-type: none;
-            padding: 0;
-            margin-top: 20px;
-        }
-
-        .blogs ul li {
-            flex: 1 0 90%;
-            display: block;
-            padding: 15px;
-            padding-top: 20px;
-            margin-bottom: 10px;
-            background-color: #0d7d81;
-            border: 1px solid #444850;
-            border-radius: 4px;
-            transition: transform 0.3s ease-out;
-        }
-
-        .blogs ul li:hover {
-            background-color: #0d7381;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-
-        .blogs li a {
-            font-size: 20px;
-            color: #fff;
-            text-decoration: none;
-        }
-
-        .blogs li p {
-            color: #bababa;
-            text-decoration: none;
-        }
-
-        @keyframes spin {
-        from {transform: rotate(0deg);}
-        to {transform: rotate(360deg);}
-}
-    </style>
+    <title>Mzzj's blog</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/css/index.css' %}">
 </head>
 <body>
 
@@ -122,8 +12,8 @@
     <br>
     <img src="{% static 'blog/img/avatar.png' %}" alt="mzzj">
     <div>
-        <h2>个人介绍</h2>
-        <p>这里是您的个人介绍内容，您可以根据需要自定义。</p>
+        <h2>Hi, I'm Mzzj</h2>
+        <p>: )</p>
     </div>
 </div>
 

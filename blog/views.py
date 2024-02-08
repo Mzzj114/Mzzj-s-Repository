@@ -1,6 +1,9 @@
+import os.path
+
 from django.shortcuts import render, get_object_or_404
 from django.utils.safestring import mark_safe
 
+from Web_all_dj.settings import BASE_DIR
 from .models import postThing
 
 
@@ -17,9 +20,13 @@ def index(request):
 def posts(request, posttitle):
     post = get_object_or_404(postThing, title=posttitle)
 
-    # security issue: here need extra code to ensure that post.text is safe
-    # 注意注入攻击, 考虑外部库 bleach
+    # html_path = os.path.join(BASE_DIR, "blog/blogs", post.title, "main.html")
+
     html_text = mark_safe(post.text)
+
+    # later consider to handle each blog as textFeild and their static files as our static files
+
+    # print(html_text)
 
     context = {
         "title": post.title,

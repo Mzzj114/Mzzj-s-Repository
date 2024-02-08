@@ -43,17 +43,17 @@
         padding: 10px; /* 修改了padding的值，使得输入框更适合在小屏幕上操作 */
         border-radius: 5px;
         border: 1px solid #ccc;
-        resize: none; /* 去掉了文本域的resize属性，避免用户在移动设备上无法正确调整文本域大小 */
+        resize: none;
         overflow: auto;
     }
 
     textarea {
         text-align: left;
-        width: 90%; /* 这里修改了宽度为100%，使得文本域在移动设备上全屏显示 */
-        padding: 10px; /* 修改了padding的值，使得文本域更适合在小屏幕上操作 */
+        width: 90%;
+        padding: 10px;
         border-radius: 5px;
         border: 1px solid #ccc;
-        resize: none; /* 去掉了文本域的resize属性，避免用户在移动设备上无法正确调整文本域大小 */
+        resize: none;
         overflow: auto;
     }
 
@@ -74,6 +74,9 @@
     @media screen and (max-width: 600px) {
         input[type="text"], textarea {
             width: 100%; /* 在屏幕宽度小于600px时，将输入框和文本域的宽度设置为100% */
+        }
+        li span, a strong {
+            font-size: 20px;
         }
     }
     </style>
