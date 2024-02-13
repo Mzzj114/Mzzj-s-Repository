@@ -19,6 +19,12 @@
 
 
 <div class="container">
+    <div  class="searchbar">
+        <input type="text" placeholder="搜索博客...">
+        <button><img alt="" src="{% static 'blog/img/search.png' %}">&nbsp;&nbsp;</button>
+        <p>&nbsp</p>
+    </div>
+    <hr>
     <div class="blogs">
         <ul>
             {% for post in all_posts %}

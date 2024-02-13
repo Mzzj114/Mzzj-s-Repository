@@ -12,7 +12,6 @@ body {
     background-color: #293c51;
     border-radius: 3px;
     /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);*/
-
 }
 
 .profile {
@@ -59,6 +58,30 @@ body {
     font-size: 16px;
     color: #ccc;
 
+}
+
+.searchbar {
+    font-size: 19px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.searchbar input[type=text] {
+    float: right;
+    padding: 6px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 12px;
+}
+
+
+.searchbar button {
+    float: right;
+    padding: 2px;
+    margin-top: 8px;
+    background-color: #293c51;
+    border: none;
+    cursor: pointer;
 }
 
 .blogs {
