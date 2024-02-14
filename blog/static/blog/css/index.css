@@ -5,6 +5,23 @@ body {
     background-color: #282c34;
 }
 
+body button {
+    background-color: #282c34;
+    max-width: 40px;
+    max-height: 40px;
+    border: none;
+}
+
+body button img {
+    max-width: 40px;
+    max-height: 40px;
+}
+
+body button img:hover {
+    border: #7d8084;
+    transition: border 0.3s, transform 0.2s;
+}
+
 .container {
     max-width: 63%;
     margin: 5% auto;
@@ -23,6 +40,7 @@ body {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 20px;
+    margin-top: 50px;
 
 
     /*border: 1px solid #444850;*/
@@ -75,7 +93,7 @@ body {
 }
 
 
-.searchbar button {
+.searchbar input[type=submit] {
     float: right;
     padding: 2px;
     margin-top: 8px;

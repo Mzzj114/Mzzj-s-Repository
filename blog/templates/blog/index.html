@@ -8,6 +8,9 @@
 </head>
 <body>
 
+<button onclick="window.location.href='{% url "blog:index" %}';">
+    <img alt="home" src="{% static 'blog/img/home.png' %}"></button>
+
 <div class="profile">
     <br>
     <img src="{% static 'blog/img/avatar.png' %}" alt="mzzj">
@@ -17,12 +20,15 @@
     </div>
 </div>
 
-
 <div class="container">
     <div  class="searchbar">
-        <input type="text" placeholder="搜索博客...">
-        <button><img alt="" src="{% static 'blog/img/search.png' %}">&nbsp;&nbsp;</button>
-        <p>&nbsp</p>
+        <form method="post" action="{% url 'blog:search' %}">
+            {% csrf_token %}
+            <input type="submit" value="&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"
+                   style='background: url("{% static 'blog/img/search.png' %}")'>
+            <input type="text" name="keywords" placeholder="Enter keywords to search...">
+        </form>
+        <p>&nbsp{{ blog_list_title }}</p>
     </div>
     <hr>
     <div class="blogs">
